@@ -1,1 +1,1 @@
-JavaCoreTask for Open Cascade
+JavaCoreTask
