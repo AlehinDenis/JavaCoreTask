@@ -30,12 +30,20 @@ public class Solution {
         int elementToBeRemoved = rand.nextInt(arrSize);
 
         // Deleting the element
-        int [] newArray = new int[arrSize - 1];
+        int [] newArray = new int[array.length - 1];
         for (int i = 0; i < newArray.length; i++)
             newArray[i] = array[i < elementToBeRemoved? i: i+1];
 
         shuffleArray(newArray);
-        
+
+        // Finding the deleted element
+        int sum = 0;
+        for (int i = 0; i < newArray.length; i++)
+            sum += newArray[i];
+        int sumOfArithProg = (1 + (newArray.length + 1)) * (newArray.length + 1) / 2; // a sum of an arithmetic progression
+        int element = sumOfArithProg - sum;
+
+        System.out.println("The deleted element was: " + element);
     }
 
     public static  void shuffleArray(int[] array)
